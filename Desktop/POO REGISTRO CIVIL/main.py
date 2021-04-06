@@ -17,9 +17,9 @@ def create_person():
     people.append(Person(name,age))
 
 def show_people():
-    print("\nPesonas creadas: ")
+    print("\nPesonas creadas: \n")
     for (i,_) in enumerate(people):
-        print(f"{i}:{people[i].name} = {people[i].age}" ) #preguntar esto porque no entendi
+        print(f"{i}: {people[i].name} = {people[i].age}" ) #preguntar esto porque no entendi
 
 def person_selector():
     return int(input("A quien quieres seleccionar? "))
@@ -28,8 +28,12 @@ def grow_old_person(): #envejecer a personas pero debo primero mostrar a todas
     show_people()
     i = person_selector()
     years = int(input("En cuántos años lo quieres envejecer? "))
-    people[i].age += years
-
+    try:
+        people[i].age += years
+        return
+    except ValueError as e:
+        print(e)
+    
 def change_name():
     i = person_selector()
     name = input("Ingresa el nuevo nombre ")
