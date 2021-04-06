@@ -20,8 +20,9 @@ class Person:
         if value > 0:
             self.__age = value
 
-
+"""
 p1 = Person("Juan",18)
 print(p1.name)
 p1.name = "Carlos"
 print(p1.name)
+"""
